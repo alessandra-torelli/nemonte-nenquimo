@@ -1,0 +1,693 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*************** INIZIO MIO CODICE ***************/
+
+/********** COLORI **********/
+
+:root {
+    --primary-dark: #4B522A;
+    --primary-light: #879741;
+    --secondary-dark: #693A22;
+    --secondary-light: #CB5525;
+    --tertiary: #C2D4D4;
+    --light: #F8E7D1;
+    --dark:#2B2F18;
+  }
+
+/********** TIPOGRAFIA **********/
+
+/*** Family ***/
+
+h1, h2, h3{
+    font-family: "Caesar Dressing", system-ui;
+}
+
+.subtitle, p, a{
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.cit p{
+    font-family: "Nothing You Could Do", cursive;
+    font-size: 1.5rem;
+    line-height: 140%;
+}
+
+/*** Size ***/
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem; 
+}
+
+h3, .subtitle{
+    font-size: 1.5rem; 
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+a{
+    font-size: 1.125rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/*** Color ***/
+
+h1, .subtitle{
+    color: var(--light);
+}
+
+h2, h3, p{
+    color: var(--dark);
+}
+
+a{
+    color: var(--dark);
+}
+
+a:hover{
+    color: var(--secondary-dark);
+}
+
+/*** Spacing ***/
+
+h1{
+    margin-bottom: 1.25rem;
+}
+
+h2{
+    margin-bottom: 1.5rem;
+}
+
+h3{
+    margin-bottom: 1.25rem;
+}
+
+/********** Generali **********/
+
+nav, .card, footer, .cit{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    background-color: var(--primary-dark);
+}
+
+main{
+    background-color: var(--light);
+}
+
+/********** Header **********/
+
+header{
+    height: 100px;
+    width: 100vw;
+    background-color: rgba(75, 82, 42, 0.7);
+    transition: background-color 200ms linear;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header:hover{
+    background-color: rgba(75, 82, 42, 1);
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3.75rem;
+}
+
+nav a {
+    color: var(--light);
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 100ms linear;
+}
+
+.current{
+    color: var(--tertiary);
+}
+
+nav ul li{
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+}
+
+nav a:hover{
+    color: var(--dark);
+    background-color: var(--tertiary);
+}
+
+nav ul li ul{
+    display: none;
+    border-radius: 4px;
+}
+
+nav ul li:hover ul{
+    position: absolute;
+    top: 140%;
+    left: -55%;
+    display: flex;
+    flex-direction:column;
+    border-radius: 4px;
+}
+
+nav ul li ul li{
+    background-color: var(--primary-dark);
+}
+
+nav ul li ul li a{
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    transition: background-color 100ms linear;
+}
+
+.pagina-corrente nav ul li ul li a:hover, .pagina-corrente{
+    color: var(--dark);
+    background-color: var(--tertiary);
+}
+
+a img:hover{
+    filter: brightness(0.9);
+}
+
+#logo-header:hover{
+    background: none;
+}
+
+a img{
+    filter: none;
+}
+
+/********** Button **********/
+
+.button{
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-light);
+    border-radius: 4px;
+    display: inline-block;
+    color: var(--light);
+    margin-top: 1.25rem;
+    transition: background-color 100ms linear;
+}
+
+.button:hover{
+    background-color: var(--tertiary);
+    color: var(--dark);
+}
+
+/********** Footer **********/
+
+#footer-wrapper{
+    background-color: var(--secondary-dark);
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+footer h3{
+    color: var(--light);
+}
+
+footer a{
+    color: var(--light);
+}
+
+footer a:hover{
+    color: var(--tertiary);
+}
+
+footer a img{
+    fill: var(--tertiary);
+}
+
+.col-footer{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#col-logo-footer{
+    display:flex;
+    justify-content: center;
+}
+
+.footer-link{
+    margin-top: 1rem;
+}
+
+
+/********** MAIN **********/
+
+main{
+    background-image: url("img/forest.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-bottom: 64px;
+    background-size: contain;
+}
+
+/***** Cover *****/
+
+.cover{
+    width: 100%;
+    height: 500px;
+    margin-top: 100px;
+    background-size: cover;
+}
+
+#headline-container{
+    position: relative;
+}
+
+#headline{
+    position: absolute;
+    /* left: 66%; */
+    top: 50px;
+    right: 60px;
+}
+
+/***** Content *****/
+
+.card{
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-end{
+    justify-content: flex-end;
+}
+
+.card-separata{
+    justify-content: space-between;
+}
+
+.piena{
+    width: 100%;
+}
+
+.doppia{
+    width: 66%;
+}
+
+.singola{
+    width: 33%;
+}
+
+.txt-sx{
+    margin-right: 1%;
+}
+
+.txt-dx{
+    margin-left: 1%;
+}
+
+/***** Immagini *****/
+
+img{
+    height: fit-content;
+    filter: drop-shadow(0px 4px 4px rgba(75, 82, 42, 0.24));
+}
+
+.img-vert{
+    width: 25%;
+}
+
+.img-up{
+    margin-top: -140px;
+}
+
+.img-down{
+    position: relative;
+    bottom: -140px;
+}
+
+.due-img{
+    width: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.orizz{
+    width: 100%;
+}
+
+.vert{
+    width: 75%;
+}
+
+.vert-fuori{
+    width: 23%;
+}
+
+.fuori-sx{
+    margin-left: -17%;
+}
+
+.fuori-dx{
+    margin-right: -5.5%;
+}
+
+.destra{
+    align-self: flex-end;
+}
+
+.img-m-sotto{
+    margin-bottom: 70px;
+}
+
+/***** Citazioni *****/
+
+.cit-wrapper{
+    background-color: var(--primary-light);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.cit p{
+    color: var(--light);
+}
+
+.cit-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
+/********** PAGINE **********/
+
+/********** Homepage **********/
+
+#cover-home{
+    height: 750px;
+    background-image: url("img/home/nemonte-nequimo.jpg");
+    background-position: top right;
+}
+
+/********** Personaggio **********/
+
+#cover-personaggio{
+    background-image: url("img/personaggio/nemonte-nenquimo_biografia.jpg");
+    background-position: center left;
+}
+
+#cartina{
+    width: 50%;
+    margin-right: 16%;
+}
+
+/********** Contributi **********/
+
+#cover-contributi{
+    background-image: url("img/contributi/nemonte-nenquimo_contributi.jpg");
+    background-position: center center;
+}
+
+#pungi-dito{
+    margin-left: 33%;
+    width: 50%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.txt-sopra{
+    width: 100%;
+}
+
+#wao-protesta{
+    width: 50%;
+    margin-left: 50%;
+}
+
+/********** Riconoscimenti **********/
+
+#cover-riconoscimenti{
+    background-image: url("img/riconoscimenti/cover-riconoscimenti.jpg");
+    background-position: top center;
+}
+
+#col-centrale{
+    margin-top: -50px;
+}
+
+#riconoscimenti>.singola{
+    box-sizing: content-box;
+    width: 32%;
+}
+
+/********** Dicono di lei **********/
+
+#cover-dicono-di-lei{
+    background-image: url("img/dicono-di-lei/cover-dicono-di-lei.jpg");
+    background-position: center center;
+}
+
+#firma{
+    font-family: "Nothing You Could Do", cursive;
+    font-size: 1.25rem;
+}
+
+/********** Link **********/
+
+#cover-link{
+    background-image: url("img/link/cover-link.jpg");
+    background-position: bottom center;
+}
+
+#link-articoli h3{
+    margin-top: 70px;
+}
+
+#link-articoli a{
+    display: block;
+    margin-top: 1.5%;
+}
+
+#scimmia{
+    align-self: flex-end;
+}
+
+/********** Lettera **********/
+
+#cover-lettera{
+    background-image: url("img/lettera/cover-lettera.jpg");
+    background-position: center center;
+}
+
+#img-centrale{
+    width:90%;
+    margin-left: 26.9%;
+}
+
+#letter-incipit{
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 140%;
+}
+
+/********** Gallery **********/
+
+#cover-gallery{
+    background-image: url("img/gallery/cover-gallery.jpg");
+    background-position: center center;
+}
+
+.sezione-gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sezione-gallery img{
+    margin-top: 20px;
+    box-sizing: border-box;
+    filter: none;
+}
+
+.sezione-gallery h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px;
+    background-color: var(--light);
+    padding-top: 35px;
+    box-sizing: border-box;
+}
+
+#gallery-nemonte h2, #gallery-foresta h2{
+    width: 43%;
+    margin-left: 7%;
+}
+
+#gallery-waorani h2{
+    width: 43%;
+    margin-right: 7%;
+}
+
+.sezione-gallery p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.tutta{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.doppia-gallery{
+    width: 66.66%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.singola-gallery{
+    width: 33.33%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.singola-gallery p{
+    align-self: start;
+}
+
+.mezza{
+    width: 50%;
+}
+
+.img.title.container{
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pl{
+    padding-left: 20px;
+}
+
+.pr{
+    padding-right: 20px;
+}
+
+#gallery>.cit-wrapper{
+    margin-top: 20px;
+}
+
+#gallery{
+    background-image: none;
+    padding-bottom: 0;
+}
+
+.p-right {
+    box-sizing: border-box;
+    padding-right: 5vw;
+}
+
+.p-left{
+    box-sizing: border-box;
+    padding-left: 5vw;
+}
